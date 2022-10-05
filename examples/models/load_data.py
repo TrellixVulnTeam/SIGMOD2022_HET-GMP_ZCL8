@@ -25,7 +25,7 @@ def process_criteo(path):
         'test_dense_feats.npy', 'test_sparse_feats.npy', 'test_labels.npy']]
     dense_feats =  [col for col in df.columns if col.startswith('I')]
     sparse_feats = [col for col in df.columns if col.startswith('C')]
-    labels = df['label']
+    labels = df[['label']]
     dense_feats = process_dense_feats(df, dense_feats)
     sparse_feats = process_sparse_feats(df, sparse_feats)
     num_data = dense_feats.shape[0]
